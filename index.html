@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MATHI MAKEOVER TENKASI — professional makeup, home beauty services across Tamil Nadu, and beautician classes in Tenkasi.">
+  <meta name="theme-color" content="#120d12">
+  <title>MATHI MAKEOVER TENKASI | Makeup & Beauty</title>
+  <style>
+    :root {
+      --bg: #120d12;
+      --panel: #1d151d;
+      --gold: #d8b36a;
+      --pink: #f0c6d4;
+      --cream: #fff8f0;
+      --muted: #cbbfc8;
+      --line: rgba(216,179,106,.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--cream); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92%); margin: auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(18,13,18,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; }
+    .brand { color: var(--gold); font-weight: 800; letter-spacing: 2px; font-size: 1rem; }
+    .brand small { display: block; color: var(--pink); font-size: .65rem; letter-spacing: 3px; margin-top: 2px; }
+    .navlinks { display: flex; gap: 22px; align-items: center; font-size: .9rem; color: var(--muted); }
+    .navlinks a:hover { color: var(--gold); }
+    .menu { display: none; background: transparent; color: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 8px 11px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; border-radius: 999px; padding: 13px 21px; font-weight: 700; border: 1px solid var(--gold); transition: .2s ease; cursor: pointer; }
+    .btn-gold { background: var(--gold); color: #1a1117; }
+    .btn-outline { color: var(--cream); background: transparent; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .hero { padding: 68px 0 74px; background: radial-gradient(ellipse at 75% 30%, rgba(216,179,106,.12), transparent 42%), radial-gradient(ellipse at 12% 80%, rgba(240,198,212,.10), transparent 35%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: .75rem; font-weight: 800; }
+    h1 { font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: 1.02; margin: 16px 0; letter-spacing: -2px; }
+    h1 span { color: var(--pink); }
+    .lead { color: var(--muted); max-width: 580px; font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-photo { min-height: 440px; border: 1px solid var(--line); border-radius: 190px 190px 22px 22px; overflow: hidden; position: relative; background: linear-gradient(145deg, #3a2533, #171017); }
+    .hero-photo img { width: 100%; height: 100%; min-height: 440px; object-fit: cover; display: block; }
+    .photo-note { color: var(--muted); font-size: .78rem; margin-top: 9px; text-align: center; }
+    section { padding: 72px 0; }
+    .section-head { text-align: center; max-width: 700px; margin: 0 auto 38px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 10px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .gold { color: var(--gold); }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .service .num { color: var(--gold); letter-spacing: 2px; font-size: .75rem; }
+    .service h3 { margin: 10px 0 7px; color: var(--pink); }
+    .service p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+    .feature-panel { background: linear-gradient(145deg, #2b1c29, #171017); border: 1px solid var(--line); border-radius: 24px; padding: 34px; }
+    .feature-panel h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.12; margin: 12px 0; }
+    .feature-panel p, .feature-panel li { color: var(--muted); }
+    .feature-panel ul { padding-left: 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .gallery figure { margin: 0; }
+    .gallery img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); background: #251923; }
+    .gallery figcaption { color: var(--muted); font-size: .85rem; padding: 8px 2px; }
+    .contact { background: linear-gradient(135deg, #281b27, #151015); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .contact-card { max-width: 800px; margin: auto; text-align: center; }
+    .contact-card h2 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.1; margin: 12px 0; }
+    .contact-card p { color: var(--muted); }
+    .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    footer { padding: 26px 0; color: var(--muted); font-size: .85rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 30; background: #25d366; color: #082b15; border-radius: 999px; padding: 14px 18px; font-weight: 800; box-shadow: 0 8px 25px #0006; }
+    @media (max-width: 800px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 44px; }
+      .hero-photo { min-height: 350px; max-width: 520px; margin: auto; width: 100%; }
+      .hero-photo img { min-height: 350px; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .navlinks { display: none; position: absolute; top: 66px; left: 0; right: 0; background: #171017; border-bottom: 1px solid var(--line); padding: 18px 4%; flex-direction: column; align-items: flex-start; }
+      .navlinks.open { display: flex; }
+      .menu { display: block; }
+    }
+    @media (max-width: 520px) {
+      .services, .gallery { grid-template-columns: 1fr; }
+      .service { padding: 20px; }
+      section { padding: 54px 0; }
+      .whatsapp-float { right: 12px; bottom: 12px; padding: 12px 15px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">MATHI MAKEOVER<small>TENKASI</small></a>
+    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">Menu ☰</button>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#classes">Beauty Classes</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Beauty • Elegance • Confidence</div>
+        <h1>Your Beauty,<br><span>Our Passion.</span></h1>
+        <p class="lead">Professional makeup artistry and beauty services designed to make you feel confident, radiant, and beautifully you.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="https://wa.me/919344797406?text=Hello%20Mathi%20Makeover%2C%20I%20would%20like%20to%20book%20a%20beauty%20service." target="_blank" rel="noopener">Book on WhatsApp ↗</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-photo">
+          <!-- Replace hero-makeup.jpg with your own makeup portrait in the assets folder -->
+          <img src="assets/hero-makeup.jpg" alt="Makeup artistry portfolio portrait" onerror="this.style.display='none'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:30px;color:#f0c6d4&quot;><div style=&quot;font-size:4rem&quot;>✦</div><strong style=&quot;color:#d8b36a;letter-spacing:2px&quot;>YOUR MAKEUP PHOTO</strong><p style=&quot;color:#cbbfc8&quot;>Add your photo as assets/hero-makeup.jpg</p></div>';">
+        </div>
+        <div class="photo-note">Professional looks • Personal attention • Beautiful results</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Expertise</div>
+        <h2>Makeup & Beauty <span class="gold">Services</span></h2>
+        <p>Choose the look that suits your occasion, style, and personality. Contact us for availability and pricing.</p>
+      </div>
+      <div class="services">
+        <article class="service"><div class="num">01 / EVERYDAY TO EVENT</div><h3>Basic Makeup</h3><p>A fresh, polished look for your special day or event.</p></article>
+        <article class="service"><div class="num">02 / CAMERA READY</div><h3>HD Makeup</h3><p>A refined finish designed to look smooth in photos and videos.</p></article>
+        <article class="service"><div class="num">03 / PREMIUM LOOK</div><h3>Pro HD Makeup</h3><p>A detailed, elevated makeup experience tailored to your look.</p></article>
+        <article class="service"><div class="num">04 / LONG-WEAR LOOK</div><h3>Sweat-Proof Makeup</h3><p>Makeup options selected with long-wear comfort in mind.</p></article>
+        <article class="service"><div class="num">05 / OCCASION READY</div><h3>Waterproof Makeup</h3><p>A water-resistant makeup option for selected occasions.</p></article>
+        <article class="service"><div class="num">06 / DEWY FINISH</div><h3>Glass Skin Makeup</h3><p>A luminous, fresh-looking finish with a radiant glow.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <div class="wrap split">
+      <div class="feature-panel">
+        <div class="eyebrow">Learn • Practice • Grow</div>
+        <h2>Build Your Future in <span class="gold">Beauty</span></h2>
+        <p>Interested in becoming a beautician or improving your makeup skills? Ask about our beautician classes in Tenkasi.</p>
+        <ul>
+          <li>Beauty and makeup skill training</li>
+          <li>Practice-focused learning</li>
+          <li>Course details and availability on request</li>
+        </ul>
+        <a class="btn btn-gold" href="https://wa.me/919344797406?text=Hello%20Mathi%20Makeover%2C%20please%20share%20details%20about%20beautician%20classes." target="_blank" rel="noopener">Ask About Classes ↗</a>
+      </div>
+      <div>
+        <div class="eyebrow">Where We Serve</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);line-height:1.1">Beauty Services, <span class="gold">Where You Need Them.</span></h2>
+        <p style="color:var(--muted)">Based in Tenkasi, Tamil Nadu, MATHI MAKEOVER offers home beauty service enquiries across Tamil Nadu. Please message us with your location, event date, and preferred service so we can confirm availability.</p>
+        <a class="btn btn-outline" href="https://wa.me/919344797406?text=Hello%20Mathi%20Makeover%2C%20I%20would%20like%20to%20check%20home%20service%20availability." target="_blank" rel="noopener">Check Home Service Availability ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our Work</div>
+        <h2>Beauty <span class="gold">Gallery</span></h2>
+        <p>Selected makeup portfolio photos from MATHI MAKEOVER TENKASI.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="assets/gallery-1.jpg" alt="Bridal makeup portfolio portrait"><figcaption>Bridal Makeup</figcaption></figure>
+        <figure><img src="assets/gallery-2.jpg" alt="Traditional bridal makeup look"><figcaption>Traditional Bridal Look</figcaption></figure>
+        <figure><img src="assets/gallery-3.jpg" alt="Colorful saree and bridal makeup portrait"><figcaption>Special Occasion Makeup</figcaption></figure>
+        <figure><img src="assets/gallery-4.jpg" alt="Professional bridal makeup portfolio"><figcaption>Professional Makeup</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-card">
+      <div class="eyebrow">Let's Connect</div>
+      <h2>Ready for Your <span class="gold">Glow-Up?</span></h2>
+      <p>For bookings, home service enquiries, or beautician class details, contact MATHI MAKEOVER TENKASI on WhatsApp.</p>
+      <div class="contact-actions">
+        <a class="btn btn-gold" href="https://wa.me/919344797406?text=Hello%20Mathi%20Makeover%20Tenkasi%2C%20I%20would%20like%20more%20information." target="_blank" rel="noopener">WhatsApp: 93447 97406 ↗</a>
+        <a class="btn btn-outline" href="#home">Back to Top ↑</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>© <span id="year"></span> MATHI MAKEOVER TENKASI. All rights reserved.</div>
+    <div>Makeup • Home Beauty Services • Beautician Classes</div>
+  </div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/919344797406?text=Hello%20Mathi%20Makeover%20Tenkasi!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp ↗</a>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
